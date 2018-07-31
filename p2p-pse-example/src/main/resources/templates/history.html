@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html lang="en">
+{{>layouts/header}}
+<body id="page-top">
+	{{>layouts/navbar}}
+	<div id="wrapper">
+		{{>layouts/sidebar}}
+		<div id="content-wrapper">
+			<div class="container-fluid">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="#">Home</a></li>
+					<li class="breadcrumb-item active">Historial de Pagos</li>
+				</ol>
+				<div id="content">
+					{{>components/messages}}
+					<div class="card mb-3">
+						<div class="card-header">Historico de Pagos</div>
+						<div class="card-body">
+							<div class="card-body">
+								<div class="table-responsive">
+									<table class="table table-bordered" id="dataTable" width="100%"
+										cellspacing="0">
+										<thead>
+											<tr>
+												<th>Nombre</th>
+												<th>Apellidos</th>
+												<th>Tipo Documento</th>
+												<th>Documento</th>
+												<th>Referencia</th>
+												<th>Estado</th>
+											</tr>
+										</thead>
+										<tfoot>
+											<tr>
+												<th>Nombre</th>
+												<th>Apellidos</th>
+												<th>Tipo Documento</th>
+												<th>Documento</th>
+												<th>Referencia</th>
+												<th>Estado</th>
+											</tr>
+										</tfoot>
+										<tbody>
+											{{#payments}}
+											<tr>
+												<td>{{nombre}}</td>
+												<td>{{apellidos}}</td>
+												<td>{{tipo_documento}}</td>
+												<td>{{numero_documento}}</td>
+												<td>{{referencia}}</td>
+												<td>{{estado}}</td>
+											</tr>
+											{{/payments}}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="card-footer small text-muted"
+							style="background: #373737">
+							<img width="100px"
+								src="https://www.placetopay.com/web/sites/all/themes/dp8/logo.svg" />
+						</div>
+					</div>
+				</div>
+			</div>
+			{{>layouts/footer}}
+		</div>
+	</div>
+	{{>layouts/scripts}}
+</body>
+</html>

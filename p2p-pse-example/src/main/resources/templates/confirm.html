@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en">
+{{>layouts/header}}
+<body id="page-top">
+
+	<div id="wrapper">
+		<div id="content-wrapper">
+			<div class="container-fluid">
+				</br>
+				<div id="content">
+					{{>components/messages}}
+					<div class="card mb-3">
+						<div class="card-header">Confirmación PAGO - PSE</div>
+						<div class="card-body">
+							{{#transaction}}
+							<div class="form-row">
+								<div class="form-group col-md-4">
+									<label for="bank">Transacción ID: {{transactionID}} 
+								</div>
+								<div class="form-group col-md-4">
+									<label for="bank">Referencia Pago: {{reference}} 
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-md-4">
+									<label for="bank">Fecha Transacción: {{requestDate}} 
+								</div>
+								<div class="form-group col-md-4">
+									<label for="bank">Estado Transacción:
+										{{transactionState}} 
+								</div>
+							</div>
+							{{/transaction}}
+							<center>
+								<a href="/" class="btn btn-primary">Regresar</a>
+							</center>
+						</div>
+						<div class="card-footer small text-muted"
+							style="background: #373737">
+							<img width="100px"
+								src="https://www.placetopay.com/web/sites/all/themes/dp8/logo.svg" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{>layouts/scripts}}
+</body>
+</html>

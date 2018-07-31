@@ -1,0 +1,25 @@
+ {{#successMsg}}
+<div class="alert alert-success">
+	<button type="button" data-dismiss="alert" aria-hidden="true"
+		class="close">×</button>
+	<span>{{ successMsg }}</span>
+</div>
+{{/successMsg}} {{#infoMsg}}
+<div class="alert alert-info">
+	<button type="button" data-dismiss="alert" aria-hidden="true"
+		class="close">×</button>
+	<span>{{ infoMsg }}</span>
+</div>
+{{/infoMsg}} {{#warningMsg}}
+<div class="alert alert-warning">
+	<button type="button" data-dismiss="alert" aria-hidden="true"
+		class="close">×</button>
+	<span>{{ warningMsg }}</span>
+</div>
+{{/warningMsg}} {{#errorMsg}}
+<div class="alert alert-danger">
+	<button type="button" data-dismiss="alert" aria-hidden="true"
+		class="close">×</button>
+	<span>{{ errorMsg }}</span>
+</div>
+{{/errorMsg}}

@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="en">
+{{>layouts/header}}
+<body id="page-top">
+	{{>layouts/navbar}}
+	<div id="wrapper">
+		{{>layouts/sidebar}}
+		<div id="content-wrapper">
+			<div class="container-fluid">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="#">Home</a></li>
+					<li class="breadcrumb-item active">Pagar Factura</li>
+				</ol>
+				<div id="content">
+					{{>components/messages}}
+					<div class="card mb-3">
+						<div class="card-header">PAGO - PSE</div>
+						<div class="card-body">
+							<form action="/pay">
+								<div class="form-row">
+									<div class="form-group col-md-6">
+										<label for="bank">Seleccione Banco: </label> <select
+											class="form-control" id="bank" name="bank">
+											{{#banks}}
+												<option value="{{bankCode}}">{{bankName}}</option> 
+											{{/banks}}
+										</select>
+									</div>
+									<div class="form-group col-md-6">
+										<label for="amount">Valor a Pagar/Abonar:</label> <input
+											type="number" required="required" class="form-control"
+											id="amount" name="amount" placeholder="Ingrese Valor" />
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-group col-md-6">
+										<label for="name">Nombres:</label> <input type="text"
+											required="required" class="form-control" id="name"
+											name="name" placeholder="Ingrese sus Nombres" />
+									</div>
+									<div class="form-group col-md-6">
+										<label for="surname">Apellidos:</label> <input type="text"
+											required="required" class="form-control" id="surname"
+											name="surname" placeholder="Ingrese sus Apellidos" />
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-group col-md-6">
+										<label for="docType">Tipo de Documento</label> <select
+											class="form-control" id="docType" name="docType">
+											<option value="CC">Cédula de Ciudadanía</option>
+											<option value="CE">Cédula de Extranjería</option>
+											<option value="TI">Tarjeta de Identidad</option>
+											<option value="PPN">Pasaporte</option>
+											<option value="NIT">Número de Identificación
+												Tributaria</option>
+											<option value="SSN">Social Security Number</option>
+										</select>
+									</div>
+									<div class="form-group col-md-6">
+										<label for="document">Numero de Identificación:</label> <input
+											type="text" required="required" class="form-control"
+											id="document" name="document"
+											placeholder="Ingrese Identificación" />
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-group col-md-6">
+										<label for="email">Email:</label> <input type="email"
+											required="required" class="form-control" id="email"
+											name="email" placeholder="Ingrese su Email" />
+									</div>
+									<div class="form-group col-md-6">
+										<label for="phone">Telefono o Celular:</label> <input
+											type="number" required="required" class="form-control"
+											id="phone" name="phone"
+											placeholder="Ingrese su Telefono o Celular" />
+									</div>
+								</div>
+								<center>
+									<button type="submit" class="btn btn-primary">Pagar</button>
+								</center>
+							</form>
+						</div>
+						<div class="card-footer small text-muted"
+							style="background: #373737">
+							<img width="100px"
+								src="https://www.placetopay.com/web/sites/all/themes/dp8/logo.svg" />
+						</div>
+					</div>
+				</div>
+			</div>
+			{{>layouts/footer}}
+		</div>
+	</div>
+	{{>layouts/scripts}}
+</body>
+</html>
